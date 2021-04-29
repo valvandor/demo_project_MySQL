@@ -31,7 +31,6 @@ CREATE TABLE `users` (
     created_at DATETIME DEFAULT NOW(),
         
 	FOREIGN KEY (avatar_id) REFERENCES media_files(id)
-		ON DELETE CASCADE
 
 );
 
@@ -52,7 +51,7 @@ CREATE TABLE `regions` (
 DROP TABLE IF EXISTS `profiles`;
 CREATE TABLE `profiles` (
 	user_id BIGINT UNSIGNED NOT NULL UNIQUE,
-    user_status_id SMALLINT UNSIGNED NOT NULL, 
+    user_status_id SMALLINT UNSIGNED NOT NULL DEFAULT 1, 
 
     hometown VARCHAR(100),
     region_id SMALLINT UNSIGNED NOT NULL,
@@ -73,19 +72,22 @@ CREATE TABLE `profiles` (
 
 DROP TABLE IF EXISTS `catalogs`;
 CREATE TABLE `catalogs` (
-	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
-	catalog_name VARCHAR(255) UNIQUE
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
+	catalog_name VARCHAR(255) UNIQUE,
+	parent_id INT UNSIGNED DEFAULT NULL,
+	
+    FOREIGN KEY (parent_id) REFERENCES catalogs(id)
 );
 
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
 	id SERIAL PRIMARY KEY,
-	catalog_id SMALLINT UNSIGNED NOT NULL,
+	catalog_id INT UNSIGNED NOT NULL,
 	product_image_id BIGINT UNSIGNED,
 	
-	name VARCHAR(255),
+	name VARCHAR(255) NOT NULL,
   	desription TEXT,
-	price DECIMAL (11,2),
+	price DECIMAL (11,2) NOT NULL,
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
  	updated_at DATETIME DEFAULT NUll ON UPDATE CURRENT_TIMESTAMP,
  	
@@ -97,8 +99,9 @@ CREATE TABLE `products` (
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
 	id SERIAL PRIMARY KEY,
-	user_id BIGINT UNSIGNED NOT NULL UNIQUE,
+	user_id BIGINT UNSIGNED NOT NULL,
 	
+	status ENUM ('uncomplited', 'complited') default 'uncomplited',
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 	updated_at DATETIME DEFAULT NUll ON UPDATE CURRENT_TIMESTAMP,
 
@@ -111,7 +114,6 @@ CREATE TABLE `order_lists` (
 	order_id BIGINT UNSIGNED NOT NULL,
 	product_id BIGINT UNSIGNED NOT NULL ,
 	quantity_product SMALLINT UNSIGNED NOT NULL,
-	price DECIMAL (11,2),
 	
 	PRIMARY KEY (order_id, product_id),
     FOREIGN KEY (order_id) REFERENCES orders(id),
@@ -122,13 +124,13 @@ CREATE TABLE `order_lists` (
 DROP TABLE IF EXISTS `users_rewies`;
 CREATE TABLE `users_rewies` (
 	id SERIAL PRIMARY KEY,
-	from_user_id BIGINT UNSIGNED NOT NULL,
+	from_user_id BIGINT UNSIGNED NOT NULL UNIQUE,
 	message VARCHAR(255) NOT NULL,
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 	rating ENUM('1', '2', '3', '4', '5') NOT NULL,
-	
-    FOREIGN KEY (from_user_id) REFERENCES users(id)
+	updated_at DATETIME DEFAULT NUll ON UPDATE CURRENT_TIMESTAMP,
 
+	FOREIGN KEY (from_user_id) REFERENCES users(id)
 );
 
 DROP TABLE IF EXISTS `news`;
