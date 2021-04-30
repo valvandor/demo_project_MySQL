@@ -38,7 +38,7 @@ DROP TABLE IF EXISTS `user_statuses`;
 CREATE TABLE `user_statuses` (
     status_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
     status ENUM ('bronze', 'silver', 'gold') DEFAULT 'bronze',
-    discount ENUM ('0,05', '0,1', '0,15') DEFAULT '0,05'
+    discount TINYINT UNSIGNED COMMENT 'percents'
 	
 );
 

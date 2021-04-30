@@ -23,6 +23,7 @@ WHERE users.id = @users_id
 SET @order_id = 1;
 
 SELECT
+	orders.id AS 'ID заказа',
 	products.name AS 'Название товара',
 	products.price AS 'Цена за единицу товара',
 	order_lists.quantity_product AS 'Количество'
@@ -48,21 +49,6 @@ INNER JOIN news_rating ON news_rating.new_id = news.id
 GROUP BY news_rating.new_id 
 HAVING news_rating.new_id = @new_id
 ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

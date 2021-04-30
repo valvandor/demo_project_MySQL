@@ -84,9 +84,9 @@ INSERT INTO `users` VALUES
 
 
 INSERT INTO `user_statuses` VALUES 
-	(1,'bronze','0,05'),
-	(2,'silver','0,1'),
-	(3,'gold','0,15');
+	(1,'bronze',5),
+	(2,'silver',10),
+	(3,'gold',15);
 
 INSERT INTO `regions` VALUES 
 	(1,'illum'),
@@ -132,16 +132,16 @@ INSERT INTO `catalogs` (id, catalog_name, parent_id) VALUES
 	(13, 'Лампы', 2);
 
 INSERT INTO `products` VALUES 
-	(1,11,1,'sequi',NULL,15200.00,'2021-02-19 07:22:22', default),
-	(2,12,32,'harum',NULL,6200.00,'2001-03-22 16:09:26',default),
-	(3,11,3,'sit',NULL,15700.00,'2021-03-09 02:22:22',default),
-	(4,11,4,'quia',NULL,20349.00,'2019-05-30 21:06:05',default),
-	(5,12,5,'rem',NULL,2641.00,'2021-04-19 02:25:22',default),
-	(6,12,6,'et',NULL,1247.00,'2021-04-19 02:22:22',default),
-	(7,13,7,'Бендер',NULL,5880.00,'2016-03-02 22:35:24',default),
-	(8,13,8,'Ливерпуль',NULL,6310.00,'2013-08-24 08:32:28',default),
-	(9,13,9,'Луна',NULL,2359.00,'2011-10-27 12:52:25',default),
-	(10,13,10,'Спартак',NULL,2000.00,'2019-05-30 21:06:05',default);
+	(1,11,1,'sequi',NULL,15200,'2021-02-19 07:22:22', default),
+	(2,12,32,'harum',NULL,6200,'2001-03-22 16:09:26',default),
+	(3,11,3,'sit',NULL,15700,'2021-03-09 02:22:22',default),
+	(4,11,4,'quia',NULL,20349,'2019-05-30 21:06:05',default),
+	(5,12,5,'rem',NULL,2641,'2021-04-19 02:25:22',default),
+	(6,12,6,'et',NULL,1247,'2021-04-19 02:22:22',default),
+	(7,13,7,'Бендер',NULL,5880,'2016-03-02 22:35:24',default),
+	(8,13,8,'Ливерпуль',NULL,6310,'2013-08-24 08:32:28',default),
+	(9,13,9,'Луна',NULL,2359,'2011-10-27 12:52:25',default),
+	(10,13,10,'Спартак',NULL,2000,'2019-05-30 21:06:05',default);
 
 INSERT INTO `orders` VALUES 
 	(1,1,'complited','1982-02-24 06:19:45',default),
