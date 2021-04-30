@@ -18,13 +18,13 @@ WHERE users.id = @users_id
 ;
 
 
-  # Выборка товаров по ID заказа
+  # Описание заказа
 
 SET @order_id = 1;
 
 SELECT
 	products.name AS 'Название товара',
-	products.price AS 'Цена товара',
+	products.price AS 'Цена за единицу товара',
 	order_lists.quantity_product AS 'Количество'
   FROM users 
 INNER JOIN profiles ON users.id = profiles.user_id 
@@ -33,6 +33,58 @@ INNER JOIN orders ON orders.user_id = users.id
 INNER JOIN order_lists ON order_lists.order_id = orders.id 
 INNER JOIN products ON products.id = order_lists.product_id 	
 WHERE orders.id = @order_id
+;
+
+
+  # Рейтинг новости
+
+SET @new_id = 1;
+
+SELECT 
+	news.title AS 'Заголовок',
+	SUM(news_rating.rate) AS 'Рейтинг'
+  FROM news 
+INNER JOIN news_rating ON news_rating.new_id = news.id 
+GROUP BY news_rating.new_id 
+HAVING news_rating.new_id = @new_id
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
