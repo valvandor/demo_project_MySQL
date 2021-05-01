@@ -55,7 +55,7 @@ CREATE TABLE `profiles` (
 
     hometown VARCHAR(100),
     region_id SMALLINT UNSIGNED NOT NULL,
-    spended_money INT UNSIGNED DEFAULT NULL,
+    spended_money INT UNSIGNED DEFAULT 0,
     gender ENUM('муж', 'жен', 'не указано') DEFAULT 'не указано',
     firstname VARCHAR(50),
     lastname VARCHAR(50),
@@ -103,7 +103,7 @@ CREATE TABLE `orders` (
 	
 	status ENUM ('uncomplited', 'complited') default 'uncomplited',
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-	updated_at DATETIME DEFAULT NUll ON UPDATE CURRENT_TIMESTAMP,
+	updated_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -158,43 +158,6 @@ CREATE TABLE news_rating(
     FOREIGN KEY (new_id) REFERENCES news(id)
 
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

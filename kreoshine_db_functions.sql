@@ -1,6 +1,19 @@
 USE kreoshine;
 
--- 
+
+DROP FUNCTION IF EXISTS get_user_id_from_order;
+DELIMITER //
+CREATE FUNCTION get_user_id_from_order (order_id BIGINT)
+RETURNS INT DETERMINISTIC
+	BEGIN
+		DECLARE id_user BIGINT;
+		SELECT user_id INTO id_user
+		  FROM orders WHERE orders.id = order_id;
+		RETURN id_user;
+	END//
+DELIMITER ;
+
+
 DROP FUNCTION IF EXISTS get_number_of_order_rows;
 DELIMITER //
 CREATE FUNCTION get_number_of_order_rows (order_id BIGINT)
@@ -40,7 +53,7 @@ DELIMITER //
 CREATE FUNCTION get_full_price_of_order (order_id BIGINT)
 RETURNS DECIMAL (11,2) DETERMINISTIC
 	BEGIN
-		DECLARE id_user BIGINT;
+		DECLARE user_id BIGINT;
 		DECLARE number_of_rows INT;
 		DECLARE user_discount INT;
 		DECLARE total_price DECIMAL (11,2) DEFAULT 0;
@@ -48,10 +61,8 @@ RETURNS DECIMAL (11,2) DETERMINISTIC
 		DECLARE quantity INT;
 		DECLARE item_price DECIMAL (11,2);
 	
-		SELECT 	user_id INTO id_user
-		  FROM orders WHERE orders.id = order_id;
-	
-		SET user_discount = get_user_discount(id_user);
+		SET user_id = get_user_id_from_order(order_id);
+		SET user_discount = get_user_discount(user_id);
 		SET rows_of_order = get_number_of_order_rows(order_id);
 		
 		WHILE rows_of_order > 0 DO
