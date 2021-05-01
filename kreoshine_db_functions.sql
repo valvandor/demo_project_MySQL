@@ -48,11 +48,8 @@ RETURNS DECIMAL (11,2) DETERMINISTIC
 		DECLARE quantity INT;
 		DECLARE item_price DECIMAL (11,2);
 	
-		SET user_discount = user_discount;
-		SELECT 
-			user_id INTO id_user
-		  FROM orders
-		WHERE orders.id = order_id;
+		SELECT 	user_id INTO id_user
+		  FROM orders WHERE orders.id = order_id;
 	
 		SET user_discount = get_user_discount(id_user);
 		SET rows_of_order = get_number_of_order_rows(order_id);
@@ -76,8 +73,11 @@ RETURNS DECIMAL (11,2) DETERMINISTIC
 DELIMITER ;
 
 
+SET @order_id = 1;
 
-SELECT get_full_price_of_order(1) AS 'Итоговая цена заказа 1';
+SELECT 
+	@order_id AS 'Номер заказа', 
+	get_full_price_of_order(@order_id) AS 'Итоговая цена заказа';
 
 
 
