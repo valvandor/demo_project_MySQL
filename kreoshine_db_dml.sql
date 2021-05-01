@@ -101,26 +101,26 @@ INSERT INTO `regions` VALUES
 	(10,'et');
 
 INSERT INTO `profiles` VALUES 
-	(1,default,'New Sigridside',1,NULL,'муж','Karen','Dibbert',NULL,'1971-10-28','2013-10-01 10:21:13',default),
-	(2,default,'Breitenbergchester',2,NULL,'жен','Pierre','Kuvalis',NULL,'1992-09-07','1988-05-25 20:38:41','2003-06-24 16:23:22'),
-	(3,default,'West Geovany',3,NULL,'не указано','Pansy','Hermann',NULL,'2018-12-22','1999-11-22 03:30:50',default),
-	(4,default,'Angelitaland',4,NULL,'жен','Maybell','Wolf',NULL,'2011-06-16','1976-06-27 05:43:10','1983-10-22 01:49:58'),
-	(5,default,'Konopelskiside',5,NULL,'муж','Florian','Kessler',NULL,'2006-02-14','2005-06-20 14:12:02','2016-10-02 16:50:30'),
-	(6,default,'Valentinaside',6,NULL,'не указано','Brooke','Steuber',NULL,'1992-01-15','2002-06-20 18:31:16',default),
-	(7,default,'Maryburgh',7,NULL,'не указано','Richmond','Stracke',NULL,'1981-10-29','1995-07-30 18:22:08',default),
-	(8,default,'Lake Domenic',8,NULL,'жен','Madonna','Windler',NULL,'1982-08-11','2003-09-15 15:08:41','2016-01-06 00:57:04'),
-	(9,default,'North Lelah',9,NULL,'муж','Demario','Schuster',NULL,'2001-02-09','2007-02-24 23:53:19',default),
-	(10,default,'Stromantown',10,NULL,'жен','Neoma','Hane',NULL,'1971-12-30','1992-05-19 11:32:06','2001-08-02 00:10:11'),
-	(11,default,'Jovanchester',1,NULL,'не указано','Tristian','Runte',NULL,'2005-04-29','1976-08-05 15:30:02',default),
-	(12,default,'South Erick',2,NULL,'не указано','Ansley','Halvorson',NULL,'1984-08-22','2010-08-12 03:45:15','2014-10-05 07:48:40'),
-	(13,default,'Cesarshire',3,NULL,'муж','Taya','Shanahan',NULL,'2017-04-01','1994-07-17 23:22:12',default),
-	(14,default,'West Lenore',4,NULL,'жен','Susana','McLaughlin',NULL,'1971-06-03','2013-04-17 04:45:35',default),
-	(15,default,'New Nonaview',5,NULL,'муж','Gudrun','Bradtke',NULL,'2000-11-02','2013-07-21 18:01:26',default),
-	(16,default,'Port Jailynland',6,NULL,'муж','Ansel','Bednar',NULL,'1985-09-11','2009-01-06 22:31:11',default),
-	(17,default,'Joanneside',7,NULL,'жен','Declan','Hane',NULL,'2008-01-31','2017-03-05 12:51:57',default),
-	(18,default,'Tatumberg',8,NULL,'не указано','Stanley','Lueilwitz',NULL,'2001-02-15','2000-11-12 17:10:45','2020-12-30 11:52:59'),
-	(19,default,'North Nataliashire',9,NULL,'муж','Rodolfo','Mitchell',NULL,'2001-02-15',default,default),
-	(20,default,'Bergstromburgh',10,NULL,'не указано','Osborne','Kiehn',NULL,'1982-10-16','2008-10-15 17:17:15','1994-05-10 04:50:44');
+	(1,default,'New Sigridside',1,default,'муж','Karen','Dibbert',NULL,'1971-10-28','2013-10-01 10:21:13',default),
+	(2,default,'Breitenbergchester',2,default,'жен','Pierre','Kuvalis',NULL,'1992-09-07','1988-05-25 20:38:41','2003-06-24 16:23:22'),
+	(3,default,'West Geovany',3,default,'не указано','Pansy','Hermann',NULL,'2018-12-22','1999-11-22 03:30:50',default),
+	(4,default,'Angelitaland',4,default,'жен','Maybell','Wolf',NULL,'2011-06-16','1976-06-27 05:43:10','1983-10-22 01:49:58'),
+	(5,default,'Konopelskiside',5,default,'муж','Florian','Kessler',NULL,'2006-02-14','2005-06-20 14:12:02','2016-10-02 16:50:30'),
+	(6,default,'Valentinaside',6,default,'не указано','Brooke','Steuber',NULL,'1992-01-15','2002-06-20 18:31:16',default),
+	(7,default,'Maryburgh',7,default,'не указано','Richmond','Stracke',NULL,'1981-10-29','1995-07-30 18:22:08',default),
+	(8,default,'Lake Domenic',8,default,'жен','Madonna','Windler',NULL,'1982-08-11','2003-09-15 15:08:41','2016-01-06 00:57:04'),
+	(9,default,'North Lelah',9,default,'муж','Demario','Schuster',NULL,'2001-02-09','2007-02-24 23:53:19',default),
+	(10,default,'Stromantown',10,default,'жен','Neoma','Hane',NULL,'1971-12-30','1992-05-19 11:32:06','2001-08-02 00:10:11'),
+	(11,default,'Jovanchester',1,default,'не указано','Tristian','Runte',NULL,'2005-04-29','1976-08-05 15:30:02',default),
+	(12,default,'South Erick',2,default,'не указано','Ansley','Halvorson',NULL,'1984-08-22','2010-08-12 03:45:15','2014-10-05 07:48:40'),
+	(13,default,'Cesarshire',3,default,'муж','Taya','Shanahan',NULL,'2017-04-01','1994-07-17 23:22:12',default),
+	(14,default,'West Lenore',4,default,'жен','Susana','McLaughlin',NULL,'1971-06-03','2013-04-17 04:45:35',default),
+	(15,default,'New Nonaview',5,default,'муж','Gudrun','Bradtke',NULL,'2000-11-02','2013-07-21 18:01:26',default),
+	(16,default,'Port Jailynland',6,default,'муж','Ansel','Bednar',NULL,'1985-09-11','2009-01-06 22:31:11',default),
+	(17,default,'Joanneside',7,default,'жен','Declan','Hane',NULL,'2008-01-31','2017-03-05 12:51:57',default),
+	(18,default,'Tatumberg',8,default,'не указано','Stanley','Lueilwitz',NULL,'2001-02-15','2000-11-12 17:10:45','2020-12-30 11:52:59'),
+	(19,default,'North Nataliashire',9,default,'муж','Rodolfo','Mitchell',NULL,'2001-02-15',default,default),
+	(20,default,'Bergstromburgh',10,default,'не указано','Osborne','Kiehn',NULL,'1982-10-16','2008-10-15 17:17:15','1994-05-10 04:50:44');
 
 
 
@@ -143,17 +143,17 @@ INSERT INTO `products` VALUES
 	(9,13,9,'Луна',NULL,2359,'2011-10-27 12:52:25',default),
 	(10,13,10,'Спартак',NULL,2000,'2019-05-30 21:06:05',default);
 
-INSERT INTO `orders` VALUES 
-	(1,1,'complited','1982-02-24 06:19:45',default),
-	(2,2,default,'1992-03-11 15:11:10',default),
-	(3,3,default,'2010-01-26 13:40:10',default),
-	(4,4,default,'2000-11-29 16:11:22',default),
-	(5,5,'complited','2000-06-14 09:50:55',default),
-	(6,6,default, '1989-07-05 18:40:47',default),
-	(7,7,default,'1982-11-30 01:41:42',default),
-	(8,8,'complited','1994-04-15 16:13:44',default),
-	(9,9,default,'1988-02-23 15:01:47',default),
-	(10,10,'complited','2010-06-04 19:57:59',default);
+INSERT INTO `orders`(id, user_id, status, created_at, updated_at) VALUES 
+	(1,1,'complited','1982-02-24 06:19:45','1982-02-24 06:19:45'),
+	(2,2,'uncomplited','1992-03-11 15:11:10','1982-02-24 06:19:45'),
+	(3,3,'uncomplited','2010-01-26 13:40:10','1982-02-24 06:19:45'),
+	(4,4,'uncomplited','2000-11-29 16:11:22','1982-02-24 06:19:45'),
+	(5,5,'complited','2000-06-14 09:50:55','1982-02-24 06:19:45'),
+	(6,6,'uncomplited', '1989-07-05 18:40:47','1982-02-24 06:19:45'),
+	(7,7,'uncomplited','1982-11-30 01:41:42','1982-02-24 06:19:45'),
+	(8,8,'complited','1994-04-15 16:13:44','1982-02-24 06:19:45'),
+	(9,9,'uncomplited','1988-02-23 15:01:47','1982-02-24 06:19:45'),
+	(10,10,'complited','2010-06-04 19:57:59','1982-02-24 06:19:45');
 
 INSERT INTO `order_lists` VALUES 
 	(1,1,1),
